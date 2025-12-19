@@ -3,14 +3,8 @@ import sqlite3
 conn = sqlite3.connect("shop.db")
 cursor = conn.cursor()
 
-
-cursor.execute("DROP TABLE IF EXISTS order_items")
-cursor.execute("DROP TABLE IF EXISTS orders")
-cursor.execute("DROP TABLE IF EXISTS users")
-
-
 cursor.execute("""
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL
@@ -19,7 +13,7 @@ CREATE TABLE users (
 
 
 cursor.execute("""
-CREATE TABLE orders (
+CREATE TABLE IF NOT EXISTS orders (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     total INTEGER NOT NULL,
@@ -30,7 +24,7 @@ CREATE TABLE orders (
 
 
 cursor.execute("""
-CREATE TABLE order_items (
+CREATE TABLE IF NOT EXISTS order_items (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     order_id INTEGER NOT NULL,
     product_name TEXT NOT NULL,
@@ -42,4 +36,4 @@ CREATE TABLE order_items (
 
 conn.commit()
 conn.close()
-print("✅ 資料表已重建完成")
+print("✅ 資料表初始化完成（只需執行一次）")
