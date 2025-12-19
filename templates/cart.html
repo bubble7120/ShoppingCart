@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>購物車</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  {% if session["user"] %}
+    <p>歡迎，{{ session["user"] }}！</p>
+  {% else %}
+    <p>請先登入</p>
+  {% endif %}
+
+
+  <header>
+    <h1>購物車</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">首頁</a></li>
+        <li><a href="{{ url_for('category') }}">商品分類</a></li>
+        <li><a href="{{ url_for('cart') }}">購物車</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <section class="cart">
+    <h2>你的購物車</h2>
+    {% if cart_items %}
+      <table>
+        <tr>
+          <th>商品名稱</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>小計</th>
+        </tr>
+      
+       
+{% for item in cart_items %}
+<tr>
+  <td>{{ item["name"] }}</td>
+  <td>NT${{ item["price"] }}</td>
+  <td>{{ item["quantity"] }}</td>
+  <td>NT${{ item["price"] * item["quantity"] }}</td>
+  <td>
+    <form action="{{ url_for('remove_from_cart') }}" method="POST">
+      <input type="hidden" name="name" value="{{ item['name'] }}" />
+      <button type="submit">刪除</button>
+    </form>
+  </td>
+</tr>
+{% endfor %}
+
+       
+      </table>
+      <p><strong>總金額：NT${{ total }}</strong></p>
+      <form action="{{ url_for('checkout') }}" method="POST">
+  <button type="submit">結帳</button>
+</form>
+    {% else %}
+      <p>你的購物車是空的。</p>
+    {% endif %}
+    <a href="{{ url_for('category') }}">← 返回商品分類</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 美麗購物．版權所有</p>
+  </footer>
+</body>
+</html>

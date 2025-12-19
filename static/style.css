@@ -1,0 +1,134 @@
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  margin: 0;
+  background-color: #fdfaf6;
+  color: #333;
+}
+
+header {
+  background-color: #fff0f5;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e0dede;
+  font-weight: normal;
+  color: #ff69f5;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #a0522d;
+  font-weight: bold;
+}
+
+.hero {
+  background: linear-gradient(to right, #ffe4e1, #fffaf0);
+  text-align: center;
+  padding: 60px 20px;
+  color: #ff69f5;
+}
+
+
+.hero h2 {
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+.products {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover; 
+  border-radius: 8px; 
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #e0dede;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #fff0f5;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+
+body {
+  font-size: 25px;
+}
+
+header h1 {
+  font-size: 50px;
+  letter-spacing: 10px;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+
+.product-card h4 {
+  font-size: 1.2em;
+}
+
+.product-card p {
+  font-size: 1em;
+}
+
+footer {
+  font-size: 1em;
+}
+
+
+
+.rose-garland {
+  width: 62px;        
+  height: auto;
+  vertical-align: middle;  
+  margin-left: 1px;      
+}
+

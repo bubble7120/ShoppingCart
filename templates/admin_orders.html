@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>會員</th><th>訂單編號</th><th>商品</th><th>數量</th><th>價格</th><th>總金額</th><th>時間</th>
+  </tr>
+  {% for row in orders %}
+  <tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[4] }}</td>
+    <td>{{ row[5] }}</td>
+    <td>{{ row[6] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
+  </tr>
+  {% endfor %}
+</table>

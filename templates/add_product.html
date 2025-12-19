@@ -1,0 +1,7 @@
+<form action="{{ url_for('add_product') }}" method="POST">
+  <label>商品名稱：</label>
+  <input type="text" name="name" required />
+  <label>價格：</label>
+  <input type="number" name="price" required />
+  <button type="submit">新增商品</button>
+</form>

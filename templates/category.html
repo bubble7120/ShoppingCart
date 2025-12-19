@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>商品分類</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>美麗購物</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">首頁</a></li>
+        <li><a href="{{ url_for('category') }}">商品分類</a></li>
+        <li><a href="{{ url_for('cart') }}">購物車</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="products">
+    <h2>商品分類</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="{{ url_for('static', filename='images/mask.jpg') }}" alt="面膜" />
+        <h3>深層修護面膜</h3>
+        <p>NT$450</p>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="name" value="深層修護面膜" />
+          <input type="hidden" name="price" value="450" />
+          <button type="submit">加入購物車</button>
+        </form>
+      </div>
+      <div class="product-card">
+        <img src="{{ url_for('static', filename='images/toner.jpg') }}" alt="化妝水" />
+        <h3>玫瑰保濕化妝水</h3>
+        <p>NT$620</p>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="name" value="玫瑰保濕化妝水" />
+          <input type="hidden" name="price" value="620" />
+          <button type="submit">加入購物車</button>
+        </form>
+      </div>
+      <div class="product-card">
+        <img src="{{ url_for('static', filename='images/sunscreen.jpg') }}" alt="防曬" />
+        <h3>清爽防曬乳 SPF50+</h3>
+        <p>NT$580</p>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="name" value="清爽防曬乳 SPF50+" />
+          <input type="hidden" name="price" value="580" />
+          <button type="submit">加入購物車</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 美麗購物．版權所有</p>
+  </footer>
+</body>
+</html>
