@@ -99,8 +99,8 @@ def login():
 
 @app.route("/logout")
 def logout():
-    session.pop("user", None)
-    return redirect(url_for("login"))
+    session.clear()   
+    return redirect(url_for("index")) 
 
 import traceback
 
@@ -163,4 +163,5 @@ def admin_orders():
 
 
 if __name__ == "__main__":
+
     app.run(debug=True)
